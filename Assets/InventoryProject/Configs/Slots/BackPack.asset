@@ -15,5 +15,5 @@ MonoBehaviour:
   rows: 5
   columns: 5
   colorPalette:
-    inactive: {r: 0, g: 0, b: 0, a: 0.85882354}
-    active: {r: 1, g: 1, b: 1, a: 0.50980395}
+    inactive: {r: 0.3018868, g: 0.1734085, b: 0.081167676, a: 0.45490196}
+    active: {r: 1, g: 1, b: 1, a: 0}

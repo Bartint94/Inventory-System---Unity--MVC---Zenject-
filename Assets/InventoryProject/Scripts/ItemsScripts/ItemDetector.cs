@@ -2,7 +2,6 @@ using GameplayHud;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using static UnityEditor.Progress;
 [RequireComponent(typeof(SphereCollider))]
 public class ItemDetector : MonoBehaviour
 {
