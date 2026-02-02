@@ -8,31 +8,40 @@ public class FreeCam : MonoBehaviour
     [SerializeField] private float speed;
     float xRot;
     float yRot;
-    bool enabledCam;
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (enabledCam) enabledCam = false;
-            else enabledCam = true;
-            
+            transform.position += transform.up * speed * Time.deltaTime;
+
+        }
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.position += transform.up * -speed * Time.deltaTime;
         }
 
-        if(enabledCam)
+        if (Input.GetKey(KeyCode.S))
         {
-            if(Input.GetKey(KeyCode.W))
-            {
-                transform.position += transform.forward * speed * Time.deltaTime;
-            }
-            xRot -= Input.GetAxisRaw("Mouse Y");
-            yRot += Input.GetAxisRaw("Mouse X");
-            transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
+            transform.position += transform.forward * -speed * Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += transform.right * -speed * Time.deltaTime;
+        }
+        xRot -= Input.GetAxisRaw("Mouse Y");
+        yRot += Input.GetAxisRaw("Mouse X");
+        transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
+
     }
 }
